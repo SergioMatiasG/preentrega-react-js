@@ -1,0 +1,26 @@
+*{
+  margin: 0;
+  padding: 0;
+  
+}
+
+li {
+  list-style: none;
+}
+.contenedor-listas{
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+}
+.contenedor-navbar{
+  text-align: center;
+  background-color: #18181B;
+  margin-bottom: 20px;
+}
+.contenedor-texto{
+  text-align: center;
+}
+.texto-ejemplo{
+  font-size: 50px;
+  color: #17FD03;
+}

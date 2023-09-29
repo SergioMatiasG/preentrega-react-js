@@ -8,7 +8,7 @@ function App() {
   return (
     <>
     <NavBar/>
-    <ItemListContainer texto= "!Bienvenido al Templo!"/>
+    <ItemListContainer texto= "!Bienvenidos al Templo!"/>
     </>
   )
 }

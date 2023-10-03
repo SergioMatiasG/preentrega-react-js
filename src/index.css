@@ -1,5 +1,5 @@
 :root {
-  font-family: "BatmanForeverAlternate", sans-serif;
+  font-family: "BatmanForeverAlternate", sans-serif !important;
   line-height: 1.5;
   font-weight: 400;
 
@@ -14,14 +14,14 @@
   -webkit-text-size-adjust: 100%;
 }
 
-a {
+.navbar-list {
   font-weight: 500;
   color: #17FD03;
   text-decoration: inherit;
   font-size: 40px;
   -webkit-text-stroke: 2px #18181B;
 }
-a:hover {
+.navbar-list:hover {
   color: #ffffff;
 }
 
@@ -41,6 +41,7 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }

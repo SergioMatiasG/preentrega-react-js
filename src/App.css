@@ -1,7 +1,25 @@
 *{
   margin: 0;
   padding: 0;
+  font-family: "BatmanForeverAlternate", sans-serif;
   
+}
+.pagina-contenedor{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.contenedor-wrap{
+  flex: 1;
+}
+.contenedor-logo{
+  width: 75vw;
+  max-width: 1000px;
+  min-width: 320px;
+  margin: auto;
+}
+.img-logo{
+  width: 100%;
 }
 
 li {
@@ -21,6 +39,103 @@ li {
   text-align: center;
 }
 .texto-ejemplo{
-  font-size: 50px;
+  font-size: 52px;
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 1px 2px 0px #17FD03;
+  -webkit-text-stroke: 2px #18181B;
+}
+
+.main-footer{
+  background-color:#18181B;
+  text-align: center;
+}
+
+.columna-descripcion{
+  display:flex ;
+  justify-content: space-evenly;
+  text-align: center;
+}
+.inferior-footer{
+  border-top: 1px solid #ffff;
+  margin-left: 150px;
+  margin-right: 150px;
+}
+.titulo-footer{
+  text-align: center;
+  font-size: 32px;
+  font-weight: 900;
+  background-color: #18181B;
+  border-radius: 12px;
+  padding: 7px;
+  font-family: "BatmanForeverAlternate" sans-serif;
+  color: #fff;
+  text-shadow: 1px 2px 0px #17FD03;
+  -webkit-text-stroke: 2px #18181B;
+}
+.ant-carousel{
+  font-family: "BatmanForeverAlternate" sans-serif;
+}
+
+.contenido-footer li{
+  font-size: 15px
+}
+.footer-list{
+  font-weight: 200;
+  color:#ffff;
+  text-decoration: none;
+}
+.footer-list:hover{
   color: #17FD03;
+}
+.contenedor-carrusel{
+  height:350px;
+  width: 100%;
+  overflow: hidden;
+}
+.a-carrusel{
+  place-content: center;
+  transition: all 1s ease-in-out;
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+.a-carrusel:hover {
+  transform: scale(1.1);
+  transition: all 1s ease-in-out;
+}
+.img-carrusel{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+}
+.carrusel-texto{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.carrusel-contenedor-texto{
+  padding-left: 50px;
+  font-family: "BatmanForeverAlternate" sans-serif;
+  border-left: 1px solid #fff;
+}
+.carrusel-text__titulo{
+  font-size: 90px;
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 1px 2px 0px #17FD03;
+  -webkit-text-stroke: 4px #18181B;
+  text-align: center;
+  padding-right: 50px;
+}
+.carrusel-text__parrafo{
+  color: #fff;
+  font-weight: 900;
+  font-size: 50px;
+  text-shadow: 1px 2px 0px #17FD03;
+  -webkit-text-stroke: 2px #000;
+  text-align: center;
 }

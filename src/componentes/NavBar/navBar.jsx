@@ -1,5 +1,6 @@
 import logoTemplo from '../../assets/logo.png'
 import CarWidget from '../CarWidget/carWidget'
+import './NavBar.css'
 
 const NavBar = () =>{
     return (

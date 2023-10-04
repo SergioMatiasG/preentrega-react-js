@@ -14,17 +14,6 @@
   -webkit-text-size-adjust: 100%;
 }
 
-.navbar-list {
-  font-weight: 500;
-  color: #17FD03;
-  text-decoration: inherit;
-  font-size: 40px;
-  -webkit-text-stroke: 2px #18181B;
-}
-.navbar-list:hover {
-  color: #ffffff;
-}
-
 h1 {
   font-size: 3.2em;
   line-height: 1.1;

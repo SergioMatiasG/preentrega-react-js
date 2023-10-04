@@ -1,0 +1,29 @@
+.contenedor-navbar{
+    text-align: center;
+    background-color: #18181B;
+    margin-bottom: 20px;
+  }
+  .contenedor-logo{
+    width: 75vw;
+    max-width: 1000px;
+    min-width: 320px;
+    margin: auto;
+  }
+  .img-logo{
+    width: 100%;
+  }
+  .contenedor-listas{
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+  }
+  .navbar-list {
+    font-weight: 500;
+    color: #17FD03;
+    text-decoration: inherit;
+    font-size: 40px;
+    -webkit-text-stroke: 2px #18181B;
+  }
+  .navbar-list:hover {
+    color: #ffffff;
+  }

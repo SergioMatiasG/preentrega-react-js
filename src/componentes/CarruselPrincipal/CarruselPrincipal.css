@@ -1,0 +1,70 @@
+.ant-carousel {
+  font-family: "BatmanForeverAlternate" sans-serif;
+}
+
+.contenedor-carrusel {
+  height: 350px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.a-carrusel {
+  place-content: center;
+  transition: all 1s ease-in-out;
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.a-carrusel:hover {
+  transform: scale(1.1);
+  transition: all 1s ease-in-out;
+}
+
+.img-carrusel {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+.carrusel-texto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.carrusel-contenedor-texto {
+  padding-left: 50px;
+  font-family: "BatmanForeverAlternate" sans-serif;
+  border-left: 1px solid #fff;
+}
+
+.carrusel-text__titulo {
+  font-size: 90px;
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 1px 2px 0px #17FD03;
+  -webkit-text-stroke: 4px #18181B;
+  text-align: center;
+  padding-right: 50px;
+}
+
+.carrusel-text__parrafo {
+  color: #fff;
+  font-weight: 900;
+  font-size: 50px;
+  text-shadow: 1px 2px 0px #17FD03;
+  -webkit-text-stroke: 2px #000;
+  text-align: center;
+}
+.texto-ejemplo{
+  text-align: center;
+  font-size: 52px;
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 1px 2px 0px #17FD03;
+  -webkit-text-stroke: 2px #18181B;
+}

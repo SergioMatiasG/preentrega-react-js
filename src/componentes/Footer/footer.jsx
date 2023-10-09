@@ -31,9 +31,15 @@ import './Footer.css'
             </div>
             <br />
             <div>
-                <p className="inferior-footer">
-                     TEMPLO GAMING INC | Todos los derechos reservados | Terminos del servicio | Privado
-                </p>
+                <ul className="inferior-footer">
+                    <li>TEMPLO GAMING INC</li>
+
+                    <li className='colorv'>Todos los derechos reservados</li>
+
+                    <li>Terminos del servicio</li>
+
+                    <li className='colorv'>Privado</li>
+                </ul>
             </div>
         </div>
     </div>

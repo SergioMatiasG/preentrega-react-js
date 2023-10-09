@@ -1,13 +1,13 @@
-import {Badge} from 'antd';
-import carrito from '../../assets/carrito.png'
-const CarWidget = () =>{
-    return(
-      <a className='carrito' href="#">
-        <Badge count={5} color = '#17FD03'>
-          <img src={carrito} alt="carrito de compras" />
-        </Badge>
-      </a>
-    )
+import { Badge } from "@nextui-org/react";
+import { CartIcon } from "./CartIcon";
+const CarWidget = () => {
+  return (
+    <a className='carrito' href="#">
+      <Badge content="9" color="success">
+        <CartIcon size={30} />
+      </Badge>
+    </a>
+  )
 }
 
 export default CarWidget

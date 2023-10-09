@@ -15,15 +15,24 @@
 }
 
 .inferior-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-top: 1px solid #ffff;
   margin-left: 150px;
   margin-right: 150px;
+  gap: 1.75rem  ;
+}
+.inferior-footer li{
+  gap: rem;
+}
+.colorv{
+  color: #17FD03;
 }
 
 .titulo-footer {
   text-align: center;
-  font-size: 32px;
-  font-weight: 900;
+  font-size: clamp(2em,2vw,2em);
   background-color: #18181B;
   border-radius: 12px;
   padding: 7px;
@@ -41,4 +50,13 @@
 
 .footer-list:hover {
   color: #17FD03;
+}
+@media (max-width:790px) {
+  .columna-descripcion{
+    flex-direction: column;
+  }
+  .inferior-footer{
+    flex-direction: column;
+    gap: 1rem;
+  }
 }

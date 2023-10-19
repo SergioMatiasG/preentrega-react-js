@@ -1,0 +1,5 @@
+.contenedor-cargando{
+    display: flex;
+    justify-content: center;
+    margin-top: 15%;
+}

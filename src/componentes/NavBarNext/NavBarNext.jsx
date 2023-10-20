@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Navbar, NavbarBrand, NavbarContent, NavbarMenuToggle, NavbarMenu, NavbarItem, Dropdown, DropdownMenu, DropdownItem, DropdownTrigger, Button } from "@nextui-org/react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import CarWidget from '../CarWidget/carWidget'
 import logoTemplo from '../../assets/logo.png'
 
@@ -77,14 +77,19 @@ const NavBarNext = () => {
                 base: "gap-4",
               }}
             >
+
               <DropdownItem>
                 <NavLink to={`/productos`}>
-                  Todas las Categorias
+                  <NavbarItem>
+                    Todas las Categorias
+                  </NavbarItem>
                 </NavLink>
               </DropdownItem>
               {categoria.map((cat) => (<DropdownItem key={cat} value={cat}>
                 <NavLink to={`/productos/${cat}`}>
-                  {cat}
+                  <NavbarItem>
+                    {cat}
+                  </NavbarItem>
                 </NavLink>
               </DropdownItem>
               ))}

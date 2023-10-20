@@ -42,7 +42,7 @@ const ItemDetail = ({ item}) => {
                 <a className = "linkcolor"href="">Formas de entrega</a>
                 <p>Precio: $ {item.price}</p>
                 <div>
-                <Divider className="my-5" />
+                <Divider className="my-4" />
                     <div className="contenedor-botones">
                         <p>Stock : {stock}</p>
                         <Button className="boton-next-chico" onClick={disminuir} isDisabled ={!agregarCarrito} >-</Button>
@@ -51,7 +51,7 @@ const ItemDetail = ({ item}) => {
                     </div>
                     <div className="contenedorac">
                         <Button className="boton-next-detail my-3 bbc" isDisabled={stock < contador || stock === 0 }>{agregarCarrito ? 'Comprar ahora' : 'Sin stock'}</Button>
-                        <Button className="boton-next-detail my-3" onClick={agregarAlCarrito}isDisabled={stock < contador || stock === 0 }> {agregarCarrito ? 'Agregar al carrito' : 'Sin stock'}</Button>
+                        <Button className="boton-next-detail my-3 " onClick={agregarAlCarrito}isDisabled={stock < contador || stock === 0 }> {agregarCarrito ? 'Agregar al carrito' : 'Sin stock'}</Button>
                     </div>
                     <div>
                         <Divider className="my-4" />

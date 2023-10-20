@@ -4,7 +4,7 @@ import 'swiper/css/pagination';
 import './Swiper.css';
 import { Pagination } from 'swiper/modules';
 import CardSkeleton from '../skeleton/CardSkeleton';
-import { Item } from "../Items/ItemSwiper"
+import ItemSwiper from "../Items/ItemSwiper"
 import { useEffect, useState } from 'react';
 
 const carruselS = ({ titulo, categoria }) => {
@@ -32,7 +32,7 @@ const carruselS = ({ titulo, categoria }) => {
                 {list.length ? (
                     list.map((p, index) => (
                         <SwiperSlide key={index}>
-                            <Item key={p.id} item={p} />
+                            <ItemSwiper key={p.id} item={p} />
                         </SwiperSlide>
                     ))
                 ) : (

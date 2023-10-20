@@ -1,7 +1,7 @@
 import { Card, CardBody, CardFooter, Image, Button } from "@nextui-org/react";
 import { Link } from "react-router-dom";
 
-export const Item = ({ item }) => {
+ const ItemSwiper = ({ item }) => {
   return (
     <Card className="sombreado-card ancho-card">
       <CardBody className="overflow-visible p-0">
@@ -25,3 +25,4 @@ export const Item = ({ item }) => {
     </Card>
   )
 }
+export default ItemSwiper

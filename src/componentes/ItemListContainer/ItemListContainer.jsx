@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react"
 import SkeletonS from "../skeleton/Skeleton"
-import Items2 from "../Items/ItemList"
+import ItemsList from "../Items/ItemList"
 import './ItemListContainer.css'
 import { useParams } from "react-router-dom"
-import { data } from "autoprefixer"
 
 const ItemListContainer = () => {
     const [products, setPorducts] = useState([])
@@ -18,7 +17,6 @@ const ItemListContainer = () => {
         fetch(url)
             .then((res) => res.json())
             .then((data) => setPorducts(data))
-        console.log(data)
     }, [nombreCategoria])
 
     if (!products.length) return <SkeletonS />
@@ -27,7 +25,7 @@ const ItemListContainer = () => {
         <div className="contenedor-productos">
             <h1 className="titulo-productos">Productos</h1>
             <div className="gap-20 grid grid-cols-2 sm:grid-cols-4 ">
-                {products.map((p) => (<Items2 key={p.id} item={p} />))}
+                {products.map((p) => (<ItemsList key={p.id} item={p} />))}
             </div>
         </div>
     )

@@ -25,38 +25,41 @@ const NavBarNext = () => {
           />
         </NavbarContent>
         <NavbarContent justify="center">
-          <NavLink to={`/`}>
-            <NavbarBrand className="p-4">
-              <img src={logoTemplo} alt="logo del ecommers" />
-            </NavbarBrand>
-          </NavLink>
+          <NavbarItem>
+            <NavLink to={`/`}>
+              <NavbarBrand className="p-4">
+                <img src={logoTemplo} alt="logo del ecommers" />
+              </NavbarBrand>
+            </NavLink>
+          </NavbarItem>
         </NavbarContent>
         <NavbarContent className="p-3 max-w-[50px]" justify="end">
+          <NavbarItem>
           <NavLink to={`/carrito`}>
-            <NavbarItem className="contenedor-badge">
+            <NavbarBrand className="contenedor-badge">
               <CarWidget />
-            </NavbarItem>
+            </NavbarBrand>
           </NavLink>
-
+          </NavbarItem>
         </NavbarContent>
       </NavbarContent>
 
       <NavbarContent className="md:flex hidden max-w-[500px]" justify="start">
-        <NavLink to={`/`}>
-          <NavbarItem>
-            <img src={logoTemplo} alt="logo del ecommers" />
-          </NavbarItem>
-        </NavLink>
-
+        <NavbarItem>
+          <NavLink to={`/`}>
+            <NavbarBrand>
+              <img src={logoTemplo} alt="logo del ecommers" />
+            </NavbarBrand>
+          </NavLink>
+        </NavbarItem>
       </NavbarContent>
       <div className="centrado-a">
         <NavbarContent className="hidden md:flex gap-4 " justify="center">
-          <NavLink to={`/`}>
-            <NavbarItem className="navbar-list">
+          <NavbarItem>
+            <NavLink to={`/`} className="navbar-list">
               home
-            </NavbarItem>
-          </NavLink>
-
+            </NavLink>
+          </NavbarItem>
           <Dropdown>
             <NavbarItem>
               <DropdownTrigger>
@@ -72,60 +75,72 @@ const NavBarNext = () => {
               </DropdownTrigger>
             </NavbarItem>
             <DropdownMenu
+              aria-label="ACME features"
               className="w-[340px]"
               itemClasses={{
                 base: "gap-4",
               }}
             >
 
-              <DropdownItem>
+              <DropdownItem textValue="Todas las categorias"> 
                 <NavLink to={`/productos`}>
-                  <NavbarItem>
+                  <NavbarBrand className="justify-center">
                     Todas las Categorias
-                  </NavbarItem>
+                  </NavbarBrand>
                 </NavLink>
               </DropdownItem>
-              {categoria.map((cat) => (<DropdownItem key={cat} value={cat}>
+              {categoria.map((cat) => (<DropdownItem key={cat} textValue={cat}>
                 <NavLink to={`/productos/${cat}`}>
-                  <NavbarItem>
+                  <NavbarBrand className="justify-center">
                     {cat}
-                  </NavbarItem>
+                  </NavbarBrand>
                 </NavLink>
               </DropdownItem>
               ))}
             </DropdownMenu>
           </Dropdown>
-
-          <NavLink to={`/detalles`}>
-            <NavbarItem className="navbar-list">
-              Contacto
-            </NavbarItem>
-          </NavLink>
+          <NavbarItem>
+            <NavLink to={`/detalles`}>
+              <NavbarBrand className="navbar-list">
+                Contacto
+              </NavbarBrand>
+            </NavLink>
+          </NavbarItem>
         </NavbarContent>
         <NavbarContent className=" hidden md:flex p-3 max-w-[50px]" justify="end">
-          <NavLink to={`/carrito`}>
-            <NavbarItem className="contenedor-badge">
-              <CarWidget />
-            </NavbarItem>
-          </NavLink>
+          <NavbarItem>
+            <NavLink to={`/carrito`}>
+              <NavbarBrand className="contenedor-badge">
+                <CarWidget />
+              </NavbarBrand>
+            </NavLink>
+          </NavbarItem>
         </NavbarContent>
       </div>
       <NavbarMenu className="menu-top" >
-        <NavLink to={`/`}>
-          <NavbarItem className="navbar-list">
-            home
-          </NavbarItem>
-        </NavLink>
-        <NavLink to={`/productos`}>
-          <NavbarItem className="navbar-list">
-            Productos
-          </NavbarItem>
-        </NavLink>
-        <NavLink to={`/detalles`}>
-          <NavbarItem className="navbar-list">
-            Contacto
-          </NavbarItem>
-        </NavLink>
+        <NavbarItem>
+          <NavLink to={`/`}>
+            <NavbarBrand className="navbar-list">
+              home
+            </NavbarBrand>
+          </NavLink>
+        </NavbarItem>
+
+        <NavbarItem>
+          <NavLink to={`/productos`}>
+            <NavbarBrand className="navbar-list">
+              Productos
+            </NavbarBrand>
+          </NavLink>
+        </NavbarItem>
+
+        <NavbarItem>
+          <NavLink to={`/detalles`}>
+            <NavbarBrand className="navbar-list">
+              Contacto
+            </NavbarBrand>
+          </NavLink>
+        </NavbarItem>
       </NavbarMenu>
     </Navbar>
   );

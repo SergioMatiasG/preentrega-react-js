@@ -1,7 +1,7 @@
 import { Card, CardBody, CardFooter, Image, Button } from "@nextui-org/react";
 import { Link } from "react-router-dom";
 
-export const Items2 = ({ item }) => {
+const ItemsList = ({ item }) => {
   return (
     <Card className="sombreado-card ancho-card">
       <CardBody className="overflow-visible p-0">
@@ -25,4 +25,4 @@ export const Items2 = ({ item }) => {
     </Card>
   )
 }
-export default Items2
+export default ItemsList

@@ -2,7 +2,7 @@ import { Button, Divider } from "@nextui-org/react"
 import { useState, useEffect } from 'react'
 import './ItemDetail.css'
 
-const ItemDetail = ({ item}) => {
+const ItemDetail = ({item}) => {
     const [contador, setContador] = useState(1)
     const [agregarCarrito, setAgregarCarrito] = useState(true)
     const [stock, setStock] = useState (20)

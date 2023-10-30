@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import SkeletonS from "../skeleton/Skeleton"
 import ItemsList from "../Items/ItemList"
-import './ItemListContainer.css'
+import style from './ItemListContainer.module.css'
 
 const ItemListContainer = () => {
     const [products, setPorducts] = useState([])
@@ -22,8 +22,8 @@ const ItemListContainer = () => {
     if (!products.length) return <SkeletonS />
 
     return (
-        <div className="contenedor-productos">
-            <h1 className="titulo-productos">Productos</h1>
+        <div className={style.contenedorproductos}>
+            <h1 className={style.tituloproductos}>Productos</h1>
             <div className="gap-20 grid grid-cols-2 sm:grid-cols-4 ">
                 {products.map((p) => (<ItemsList key={p.id} item={p} />))}
             </div>

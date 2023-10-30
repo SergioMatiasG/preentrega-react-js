@@ -1,0 +1,15 @@
+.centrado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.titulo {
+    font-size: clamp(3em, 4vw, 4em);
+    color: #fff;
+    text-shadow: 1px 2px 0px #17FD03;
+    -webkit-text-stroke: 4px #18181B;
+    text-align: center;
+    padding-right: 50px;
+}

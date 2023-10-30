@@ -7,22 +7,25 @@ import ItemDetailContainer from './componentes/ItemDetailContainer/ItemDetailCon
 import Carrito from './componentes/Carrito/Carrito'
 import NotFound from './componentes/NotFound/NotFound'
 import Footer from './componentes/Footer/footer'
+import CartProvider from './componentes/Context/CartProvider'
 
 function App() {
   return (
     <div className='pagina-contenedor'>
       <div className='contenedor-wrap'>
-        <BrowserRouter>
-          <NavBarNext />
-          <Routes>
-            <Route exact path='/' element={<Home />} />
-            <Route path='/productos' element={<ItemListContainer />} />
-            <Route path='/productos/:nombreCategoria' element={<ItemListContainer />} />
-            <Route path='/item/:id' element={<ItemDetailContainer />} />
-            <Route path='/carrito' element={<Carrito />} />
-            <Route path='*' element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
+        <CartProvider>
+          <BrowserRouter>
+            <NavBarNext />
+            <Routes>
+              <Route exact path='/' element={<Home />} />
+              <Route path='/item/:id' element={<ItemDetailContainer />} />
+              <Route path='/productos' element={<ItemListContainer />} />
+              <Route path='/productos/:nombreCategoria' element={<ItemListContainer />} />
+              <Route path='/carrito' element={<Carrito />} />
+              <Route path='*' element={<NotFound />} />
+            </Routes>
+          </BrowserRouter>
+        </CartProvider>
       </div>
       <Footer />
     </div>

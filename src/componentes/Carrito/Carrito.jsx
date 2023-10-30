@@ -1,16 +1,15 @@
-
-const Carrito = ({carrito}) => {
+import { useCart } from '../Context/CartProvider'
+import style from './Carrito.module.css'
+import ItemCarrito from '../Items/itemCarrito'
+const Carrito = () => {
+const {cart} = useCart()
 
     return (
       <>
-      <div>
-        <h2> Carrito de compras </h2>
-          <ul>
-            {carrito.map((item, index) => (
-              <li key={index}> {item.title} - $ {item.price}</li>
-            ))}
-          </ul>
+      <div className={style.centrado}>
+        <h2 className={style.titulo}> Carrito de compras </h2>
       </div>
+      <ItemCarrito producto={cart} />
       </>
     )
 }

@@ -1,11 +1,13 @@
 import { Button, Divider } from "@nextui-org/react"
 import { useState, useEffect } from 'react'
-import './ItemDetail.css'
+import { useCart } from "../Context/CartProvider"
+import style from './style.module.css'
 
 const ItemDetail = ({ item }) => {
     const [contador, setContador] = useState(1)
     const [agregarCarrito, setAgregarCarrito] = useState(true)
-    const [stock, setStock] = useState (20)
+    const [stock, setStock] = useState(20)
+    const {addToCart} = useCart()
 
     useEffect(() => {
         stock === 0 && setContador(0)
@@ -16,48 +18,51 @@ const ItemDetail = ({ item }) => {
     const disminuir = () => {
         contador > 1 && setContador(contador - 1)
     }
-   
+
     const agregarAlCarrito = () => {
-        if ( agregarCarrito) {
+        if (agregarCarrito) {
             const nuevoStock = stock - contador
             setStock(nuevoStock)
             if (nuevoStock < 1) {
                 setAgregarCarrito(false)
             }
         }
+        addToCart(item, contador)
     }
     return (
+        <div>
+            {!item ? (<p> El producto con id:{id} no existe</p>)
+                : (
+                    <div className={style.contenedordetalles}>
+                        <div className={style.contenedordetallesimagen}>
+                            <div className={style.imagendetails}>
+                                <img src={item.image} alt={item.title} />
+                            </div>
+                            <p>Descripcion: {item.description}</p>
+                        </div>
+                        <div className={style.contenedordetallestexto}>
+                            <h3>{item.title}</h3>
+                            <a className={style.linkcolor} href="">Metodos de pago</a>
+                            <a className={style.linkcolor} href="">Formas de entrega</a>
+                            <p>Precio: $ {item.price}</p>
+                            <div>
+                                <Divider className="my-4" />
+                                <div className={style.contenedorbotones}>
+                                    <p>Stock : {stock}</p>
+                                    <Button className={style.botonnextchico} onClick={disminuir} isDisabled={!agregarCarrito} >-</Button>
+                                    <p className="parrafo">{contador}</p>
+                                    <Button className={style.botonnextchico} onClick={aumentar} isDisabled={stock <= contador} >+</Button>
+                                </div>
+                                <div className={style.contenedorac}>
+                                    <Button className={style.botonnextdetailbbc} isDisabled={stock < contador || stock === 0}>{agregarCarrito ? 'Comprar ahora' : 'Sin stock'}</Button>
+                                    <Button className={style.botonnextdetail} onClick={agregarAlCarrito} isDisabled={stock < contador || stock === 0}> {agregarCarrito ? 'Agregar al carrito' : 'Sin stock'}</Button>
+                                </div>
+                                <Divider className="my-4" />
+                            </div>
+                        </div>
 
-        <div className="contenedor-detalles">
-            <div className="contenedor-detalles-imagen">
-                <div className="imagen-details">
-                    <img src={item.image} alt={item.title} />
-                </div>
-                <p>Descripcion: {item.description}</p>
-            </div>
-            <div className="contenedor-detalles-texto">
-                <h3>{item.title}</h3>
-                <a className = "linkcolor"href="">Metodos de pago</a>
-                <a className = "linkcolor"href="">Formas de entrega</a>
-                <p>Precio: $ {item.price}</p>
-                <div>
-                <Divider className="my-4" />
-                    <div className="contenedor-botones">
-                        <p>Stock : {stock}</p>
-                        <Button className="boton-next-chico" onClick={disminuir} isDisabled ={!agregarCarrito} >-</Button>
-                        <p className="parrafo">{contador}</p>
-                        <Button className="boton-next-chico" onClick={aumentar} isDisabled ={stock <= contador} >+</Button>
                     </div>
-                    <div className="contenedorac">
-                        <Button className="boton-next-detail my-3 bbc" isDisabled={stock < contador || stock === 0 }>{agregarCarrito ? 'Comprar ahora' : 'Sin stock'}</Button>
-                        <Button className="boton-next-detail my-3 " onClick={agregarAlCarrito}isDisabled={stock < contador || stock === 0 }> {agregarCarrito ? 'Agregar al carrito' : 'Sin stock'}</Button>
-                    </div>
-                    <div>
-                        <Divider className="my-4" />
-                    </div>
-                </div>
-            </div>
-
+                )}
         </div>
 
     )

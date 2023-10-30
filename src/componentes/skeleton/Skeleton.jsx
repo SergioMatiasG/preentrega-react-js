@@ -4,7 +4,7 @@ import './Skeleton.css'
 
 const SkeletonS = () => {
     return (
-        <div className="contenedor-productos">
+        <div className="contenedor-skeleton">
             <div className="gap-2 grid grid-cols-2 sm:grid-cols-4" >
                 <Card className="w-[200px] space-y-5 p-4 card-fondo" radius="lg">
                     <Skeleton className="rounded-lg card-fondo-b">

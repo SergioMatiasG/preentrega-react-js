@@ -6,7 +6,7 @@ import logoTemplo from '../../assets/logo.png'
 import style from './style.module.css'
 
 const NavBarNext = () => {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [categoria, setCategoria] = useState([])
 
   useEffect(() => {
@@ -36,11 +36,11 @@ const NavBarNext = () => {
         </NavbarContent>
         <NavbarContent className="p-3 max-w-[50px]" justify="end">
           <NavbarItem>
-          <NavLink to={`/carrito`}>
-            <NavbarBrand className={style.contenedorbadge}>
-              <CarWidget />
-            </NavbarBrand>
-          </NavLink>
+            <NavLink to={`/carrito`}>
+              <NavbarBrand className={style.contenedorbadge}>
+                <CarWidget />
+              </NavbarBrand>
+            </NavLink>
           </NavbarItem>
         </NavbarContent>
       </NavbarContent>
@@ -77,26 +77,26 @@ const NavBarNext = () => {
             </NavbarItem>
             <DropdownMenu
               aria-label="ACME features"
-              className="w-[340px]"
-              itemClasses={{
+              className="w-[340px]"              itemClasses={{
                 base: "gap-4",
               }}
             >
 
-              <DropdownItem textValue="Todas las categorias"> 
+              <DropdownItem textValue="Todas las categorias">
                 <NavLink to={`/productos`}>
                   <NavbarBrand className="justify-center">
                     Todas las Categorias
                   </NavbarBrand>
                 </NavLink>
               </DropdownItem>
-              {categoria.map((cat) => (<DropdownItem key={cat} textValue={cat}>
-                <NavLink to={`/productos/${cat}`}>
-                  <NavbarBrand className="justify-center">
-                    {cat}
-                  </NavbarBrand>
-                </NavLink>
-              </DropdownItem>
+              {categoria.map((cat) => (
+                <DropdownItem key={cat} textValue={cat}>
+                  <NavLink to={`/productos/${cat}`}>
+                    <NavbarBrand className="justify-center">
+                      {cat}
+                    </NavbarBrand>
+                  </NavLink>
+                </DropdownItem>
               ))}
             </DropdownMenu>
           </Dropdown>

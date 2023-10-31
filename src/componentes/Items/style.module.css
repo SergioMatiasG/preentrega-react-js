@@ -11,7 +11,7 @@
     text-align: center;
     max-width: 500px;
     border-radius: 20px;
-    box-shadow: 0px 0px 30px 0px rgba(0, 173, 81, 1);
+    box-shadow: 0px 0px 30px 0px rgb(8, 216, 18);
     background-color: #18181B;
 
 }
@@ -42,7 +42,7 @@
     text-align: center;
     width: 450px;
     border-radius: 20px;
-    box-shadow: 0px 0px 30px 0px rgba(0, 173, 81, 1);
+    box-shadow: 0px 0px 30px 0px rgb(8, 216, 18);
     background-color: #18181B;
     border-color: #ffffff solid 1px;
 
@@ -79,11 +79,11 @@
     font-size: 1em;
     font-weight: 500;
     font-family: inherit;
-    background-color: #1a1a1a ;
+    background-color: #1a1a1a;
     cursor: pointer;
     transition: border-color 0.25s;
     color: #ffff;
-    box-shadow: 0px 3px 10px 1px rgba(0, 173, 81, 1);
+    box-shadow: 0px 3px 10px 1px rgb(8, 216, 18);
 }
 
 .botonnextdetail {
@@ -91,11 +91,11 @@
     border: 1px solid transparent;
     max-width: 400px;
     font-family: inherit;
-    background-color: #1a1a1a ;
+    background-color: #1a1a1a;
     cursor: pointer;
     transition: border-color 0.25s;
     color: #ffff;
-    box-shadow: 0px 3px 10px 1px rgba(0, 173, 81, 1) ;
+    box-shadow: 0px 3px 10px 1px rgb(8, 216, 18);
     margin-top: 12px;
     margin-bottom: 12px;
 }
@@ -108,10 +108,10 @@
     cursor: pointer;
     transition: border-color 0.25s;
     color: #ffff;
-    box-shadow: 0px 3px 10px 1px rgba(0, 173, 81, 1);
+    box-shadow: 0px 3px 10px 1px rgb(8, 216, 18);
     margin-top: 12px;
     margin-bottom: 12px;
-    background-color: #000 ;
+    background-color: #000;
     border-color: #000;
 }
 
@@ -121,41 +121,53 @@
     font-size: 1em;
     font-weight: 500;
     font-family: inherit;
-    background-color: #1a1a1a ;
+    background-color: #1a1a1a;
     cursor: pointer;
     transition: border-color 0.25s;
     color: #ffff;
-    box-shadow: 0px 3px 10px 1px rgba(0, 173, 81, 1);
+    box-shadow: 0px 3px 10px 1px rgb(8, 216, 18);
 }
 
 .botonnext:hover,
 .botonnextchico:hover,
 .botonnextdetailbbc:hover,
 .botoncarrito:hover,
-.botonnextdetail:hover {
+.botonnextdetail:hover,
+.botoncantidad:hover {
     border-color: #17FD03;
     color: #17FD03;
 }
 
 .somanc {
-    box-shadow: 0px 1px 10px 0px rgba(0, 173, 81, 1) ;
+    box-shadow: 0px 1px 10px 0px rgb(8, 216, 18);
     max-width: 300px;
 }
-.contenedoritemcarrito{
+
+.contenedoritemcarrito {
     display: flex;
-    justify-content: center;
-    gap: 3rem;
+    gap: 7rem;
+    margin-left: 50px;
 }
-.cotenedorimgcarrito{
-    width: 200px;
-    height: 200px;
-    
+.cotenedorgrandeimg{
+    width: 400px;
+    height: 400px;
 }
-.comtenedortextocarrito{
+.cotenedorimgcarrito {
+    width: 300px;
+    height: 300px;
+}
+.cotenedorimgcarrito img{
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+.comtenedortextocarrito {
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
-.titulocarrito{
+
+.titulocarrito {
     font-size: clamp(1em, 2vw, 2em);
     color: #fff;
     text-shadow: 0px 1px 0px #17FD03;
@@ -163,12 +175,15 @@
     padding-bottom: 40px;
 
 }
-.centradotextocarrito{
+
+.centradotextocarrito {
     display: flex;
     justify-content: space-around;
-    
+    align-items: center;
+
 }
-.botoncarrito{
+
+.botoncarrito {
     border-radius: 8px;
     border: 1px solid transparent;
     max-width: 400px;
@@ -176,14 +191,69 @@
     cursor: pointer;
     transition: border-color 0.25s;
     color: #ffff;
-    box-shadow: 0px 3px 10px 1px rgba(0, 173, 81, 1);
+    box-shadow: 0px 3px 10px 1px rgb(8, 216, 18);
     margin-top: 12px;
     margin-bottom: 12px;
-    background-color: #000 ;
+    background-color: #000;
     border-color: #000;
     margin-top: 30px;
 }
-.contenedorbotoncarrito{
+.botoncarritoborrar {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    max-width: 400px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: border-color 0.25s;
+    color: #ffff;
+    box-shadow: 0px 3px 10px 1px rgb(223, 7, 7);
+    margin-top: 12px;
+    margin-bottom: 12px;
+    background-color: #000;
+    border-color: #000;
+    margin-top: 30px;
+}
+
+.contenedorbotoncarrito {
     display: flex;
     justify-content: center;
+    gap: 10rem;
+}
+
+.contenedorcantidad {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.botoncantidad {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    max-width: 400px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: border-color 0.25s;
+    color: #ffff;
+    box-shadow: 0px 3px 10px 1px rgb(8, 216, 18);
+    background-color: #000;
+    border-color: #000;
+
+}
+.botoncantidadmenos {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    max-width: 400px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: border-color 0.25s;
+    color: #ffff;
+    box-shadow: 0px 3px 10px 1px rgb(223, 7, 7);
+    background-color: #000;
+    border-color: #000;
+
+}
+.botoncantidadmenos:hover,
+.botoncarritoborrar:hover {
+    border-color: rgb(223, 7, 7);
+    color:rgb(223, 7, 7);
 }

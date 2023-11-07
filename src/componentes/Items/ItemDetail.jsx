@@ -10,23 +10,23 @@ const ItemDetail = ({ item }) => {
     const {addToCart} = useCart()
 
     useEffect(() => {
-        stock === 0 && setContador(0)
-    }, [stock])
+        item.stock === 0 && setContador(0)
+    }, [item.stock])
     const aumentar = () => {
-        contador < stock && setContador(contador + 1)
+        contador < item.stock && setContador(contador + 1)
     }
     const disminuir = () => {
         contador > 1 && setContador(contador - 1)
     }
 
     const agregarAlCarrito = () => {
-        if (agregarCarrito) {
-            const nuevoStock = stock - contador
-            setStock(nuevoStock)
-            if (nuevoStock < 1) {
-                setAgregarCarrito(false)
-            }
-        }
+        // if (agregarCarrito) {
+        //     const nuevoStock = item.stock - contador
+        //     setStock(nuevoStock)
+        //     if (nuevoStock < 1) {
+        //         setAgregarCarrito(false)
+        //     }
+        // }
         addToCart(item, contador)
     }
     return (
@@ -48,7 +48,7 @@ const ItemDetail = ({ item }) => {
                             <div>
                                 <Divider className="my-4" />
                                 <div className={style.contenedorbotones}>
-                                    <p>Stock : {stock}</p>
+                                    <p>Stock : {item.stock}</p>
                                     <Button className={style.botonnextchico} onClick={disminuir} isDisabled={!agregarCarrito} >-</Button>
                                     <p className="parrafo">{contador}</p>
                                     <Button className={style.botonnextchico} onClick={aumentar} isDisabled={stock <= contador} >+</Button>

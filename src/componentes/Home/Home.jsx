@@ -6,9 +6,10 @@ const Home = () => {
   return (
     <>
     <CarruselPrincipal texto="¡Bienvenidos al templo!" />
-    <Swiper titulo="Destacado" categoria="electronics" />
-    <Swiper titulo="Componentes" categoria="jewelery" />
-    <Swiper titulo="Marcas" categoria="men's clothing" />
+    <Swiper titulo="Perifericos" categoria="perifericos" />
+    <Swiper titulo="Motherboards" categoria="motherboards" />
+    <Swiper titulo="Procesadores" categoria="procesadores" />
+    <Swiper titulo="Placas de video" categoria="placas de video" />
     </>
     
   )

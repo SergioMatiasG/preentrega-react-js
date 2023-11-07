@@ -151,6 +151,8 @@
 .cotenedorgrandeimg{
     width: 400px;
     height: 400px;
+    display: flex;
+    align-items: center;
 }
 .cotenedorimgcarrito {
     width: 300px;
@@ -164,7 +166,8 @@
 .comtenedortextocarrito {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
+    width: 50%;
 }
 
 .titulocarrito {
@@ -173,6 +176,7 @@
     text-shadow: 0px 1px 0px #17FD03;
     -webkit-text-stroke: 1.5px #18181B;
     padding-bottom: 40px;
+    text-align: center;
 
 }
 

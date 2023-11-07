@@ -1,13 +1,13 @@
 import { useCart } from '../Context/CartProvider'
 import style from './Carrito.module.css'
 import ItemCarrito from '../Items/itemCarrito'
+import { Button } from '@nextui-org/react'
 const Carrito = () => {
   const { cart, removeProductFromCart, updateQuantityInCart } = useCart()
 
   const precioTotalCompra = cart.reduce((total, producto) => {
     return total + (producto.product.price * producto.quantity)
   }, 0)
-
 
   return (
     <>
@@ -20,7 +20,10 @@ const Carrito = () => {
           <p>Precio total de la compra : $ {precioTotalCompra}</p>
         </div>
       </div>
-
+      <div>
+        <Button>Crear Orden</Button>
+        <Button>Ver orden</Button>
+      </div>
     </>
   )
 }

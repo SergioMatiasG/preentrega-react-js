@@ -4,16 +4,36 @@ import { NavLink, Link } from "react-router-dom";
 import CarWidget from '../CarWidget/carWidget'
 import logoTemplo from '../../assets/logo.png'
 import style from './style.module.css'
+import { db } from "../../Firebase/Client";
+import { collection, getDocs } from "firebase/firestore";
 
 const NavBarNext = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [categoria, setCategoria] = useState([])
+  const catMap = {}
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products/categories")
-      .then((res) => res.json())
-      .then((data) => setCategoria(data))
-  }, [])
+
+    const productsRef = collection(db, "productos")
+
+    getDocs(productsRef)
+      .then((snapshot) => {
+        const updatedCategories = []
+
+        snapshot.forEach((doc) => {
+          const categoryId = doc.data().categoryId
+          if (categoryId && !catMap[categoryId]) {
+            catMap[categoryId] = true
+            updatedCategories.push(categoryId)
+          }
+        })
+
+        setCategoria(updatedCategories)
+      })
+      .catch((error) => {
+        console.error("Error al obtener categorías:", error)
+      });
+  }, [categoria])
 
 
 
@@ -77,7 +97,8 @@ const NavBarNext = () => {
             </NavbarItem>
             <DropdownMenu
               aria-label="ACME features"
-              className="w-[340px]"              itemClasses={{
+              className="w-[340px]"
+              itemClasses={{
                 base: "gap-4",
               }}
             >
@@ -101,7 +122,7 @@ const NavBarNext = () => {
             </DropdownMenu>
           </Dropdown>
           <NavbarItem>
-            <NavLink to={`/detalles`}>
+            <NavLink to={`/formulario`}>
               <NavbarBrand className={style.navbarlist}>
                 Contacto
               </NavbarBrand>
@@ -136,7 +157,7 @@ const NavBarNext = () => {
         </NavbarItem>
 
         <NavbarItem>
-          <NavLink to={`/detalles`}>
+          <NavLink to={`/formulario`}>
             <NavbarBrand className={style.navbarlist}>
               Contacto
             </NavbarBrand>
@@ -147,3 +168,13 @@ const NavBarNext = () => {
   );
 }
 export default NavBarNext
+
+// fetch("https://fakestoreapi.com/products/categories")
+//   .then((res) => res.json())
+//   .then((data) => setCategoria(data))
+// const productsRef = collection(db, "productos")
+// getDocs(productsRef)
+// .then(snapshot =>{
+//    console.log(snapshot.categoryId)
+// })
+// .catch(e => console.error(e))

@@ -8,6 +8,7 @@ import Carrito from './componentes/Carrito/Carrito'
 import NotFound from './componentes/NotFound/NotFound'
 import Footer from './componentes/Footer/footer'
 import CartProvider from './componentes/Context/CartProvider'
+import Formulario from './componentes/Formulario/Formulario'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
               <Route path='/item/:id' element={<ItemDetailContainer />} />
               <Route path='/productos' element={<ItemListContainer />} />
               <Route path='/productos/:nombreCategoria' element={<ItemListContainer />} />
+              <Route path='/formulario' element={<Formulario />} />
               <Route path='/carrito' element={<Carrito />} />
               <Route path='*' element={<NotFound />} />
             </Routes>

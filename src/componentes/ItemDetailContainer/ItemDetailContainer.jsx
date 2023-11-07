@@ -3,6 +3,8 @@ import ItemDetail from '../Items/ItemDetail'
 import Cargando from '../skeleton/Cargando'
 import style from './ItemDetailContainer.module.css'
 import { useParams } from 'react-router-dom'
+import { db } from "../../Firebase/Client"
+import { doc, getDoc} from "firebase/firestore"
 
 
 
@@ -13,9 +15,13 @@ const ItemDetailContainer = () => {
     const { id } = useParams()
     useEffect(() => {
 
-        fetch(`https://fakestoreapi.com/products/${id}`)
-            .then(r => r.json())
-            .then(data => setItem(data))
+        const productRef = doc(db, "productos", id)
+        getDoc(productRef)
+            .then((snapshot) => {
+                if (snapshot.exists()) {
+                    setItem({ id: snapshot.id, ...snapshot.data() })
+                }
+            })
             .catch(error => console.error(error))
             .finally(() => setCargando(false))
 

@@ -29,7 +29,8 @@
   color: #ffff;
   box-shadow: 0px 3px 10px 1px rgba(0, 173, 81, 1);
 }
-.boton-next-detail{
+
+.boton-next-detail {
   border-radius: 8px;
   border: 1px solid transparent;
   max-width: 400px;
@@ -42,23 +43,19 @@
 }
 
 .boton-next-chico {
-  border-radius: 8px;
   border: 1px solid transparent;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
+  box-shadow: 0px 3px 10px 1px rgba(0, 173, 81, 1);
   background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s;
-  color: #ffff;
 }
 
 .boton-next:hover,
-.boton-next-chico,
+.boton-next-chico:hover,
 .boton-next-detail:hover {
   border-color: #17FD03;
   color: #17FD03;
 }
+
 .NavbarNext {
   background-color: #18181B;
 }
@@ -112,23 +109,29 @@
   justify-content: space-between;
   width: 1150px;
 }
-.sombreado-card{
+
+.sombreado-card {
   box-shadow: 0px 1px 10px 0px rgba(0, 173, 81, 1);
 }
-.flex-colum{
+
+.flex-colum {
   display: flex;
   flex-direction: column;
 }
-.ancho-card{
+
+.ancho-card {
   max-width: 300px;
 }
-.text-small{
+
+.text-small {
   text-align: center;
 }
-.bg-content1{
-  background-color: #18181B ;
+
+.bg-content1 {
+  background-color: #18181B;
 }
-.bbc{
+
+.bbc {
   background-color: #000;
   border-color: #000;
 }

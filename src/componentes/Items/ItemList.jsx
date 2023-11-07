@@ -6,6 +6,7 @@ const ItemsList = ({ item }) => {
     <Card className="sombreado-card ancho-card">
       <CardBody className="overflow-visible p-0">
         <Image
+          isZoomed
           shadow="sm"
           radius="lg"
           width="100%"
@@ -16,7 +17,7 @@ const ItemsList = ({ item }) => {
       </CardBody>
       <CardFooter className="text-small flex-colum">
         <b>{item.title}</b>
-        <Link to= {`/item/${item.id}`}>
+        <Link to={`/item/${item.id}`}>
           <Button className="boton-next">
             Ver Producto
           </Button>

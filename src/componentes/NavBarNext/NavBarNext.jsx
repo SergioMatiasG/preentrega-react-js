@@ -128,6 +128,13 @@ const NavBarNext = () => {
               </NavbarBrand>
             </NavLink>
           </NavbarItem>
+          <NavbarItem>
+            <NavLink to={`/ordenes`}>
+              <NavbarBrand className={style.navbarlist}>
+                Ordenes
+              </NavbarBrand>
+            </NavLink>
+          </NavbarItem>
         </NavbarContent>
         <NavbarContent className=" hidden md:flex p-3 max-w-[50px]" justify="end">
           <NavbarItem>
@@ -163,18 +170,15 @@ const NavBarNext = () => {
             </NavbarBrand>
           </NavLink>
         </NavbarItem>
+        <NavbarItem>
+          <NavLink to={`/ordenes`}>
+            <NavbarBrand className={style.navbarlist}>
+              Ordenes
+            </NavbarBrand>
+          </NavLink>
+        </NavbarItem>
       </NavbarMenu>
     </Navbar>
   );
 }
 export default NavBarNext
-
-// fetch("https://fakestoreapi.com/products/categories")
-//   .then((res) => res.json())
-//   .then((data) => setCategoria(data))
-// const productsRef = collection(db, "productos")
-// getDocs(productsRef)
-// .then(snapshot =>{
-//    console.log(snapshot.categoryId)
-// })
-// .catch(e => console.error(e))

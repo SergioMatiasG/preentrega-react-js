@@ -1,14 +1,13 @@
-import { Button, Divider } from "@nextui-org/react"
+import { Divider } from "@nextui-org/react"
 import { useState, useEffect } from 'react'
 import { useCart } from "../Context/CartProvider"
+import ItemQuantitySelector from './ItemQuantitySelector'
+import AddItemButton from "./addItemButton"
 import style from './style.module.css'
 
 const ItemDetail = ({ item }) => {
     const [contador, setContador] = useState(1)
-    const [agregarCarrito, setAgregarCarrito] = useState(true)
-    const [stock, setStock] = useState(20)
-    const {addToCart} = useCart()
-
+    const { addToCart } = useCart()
     useEffect(() => {
         item.stock === 0 && setContador(0)
     }, [item.stock])
@@ -20,13 +19,7 @@ const ItemDetail = ({ item }) => {
     }
 
     const agregarAlCarrito = () => {
-        // if (agregarCarrito) {
-        //     const nuevoStock = item.stock - contador
-        //     setStock(nuevoStock)
-        //     if (nuevoStock < 1) {
-        //         setAgregarCarrito(false)
-        //     }
-        // }
+
         addToCart(item, contador)
     }
     return (
@@ -47,16 +40,10 @@ const ItemDetail = ({ item }) => {
                             <p>Precio: $ {item.price}</p>
                             <div>
                                 <Divider className="my-4" />
-                                <div className={style.contenedorbotones}>
-                                    <p>Stock : {item.stock}</p>
-                                    <Button className={style.botonnextchico} onClick={disminuir} isDisabled={!agregarCarrito} >-</Button>
-                                    <p className="parrafo">{contador}</p>
-                                    <Button className={style.botonnextchico} onClick={aumentar} isDisabled={stock <= contador} >+</Button>
-                                </div>
-                                <div className={style.contenedorac}>
-                                    <Button className={style.botonnextdetailbbc} isDisabled={stock < contador || stock === 0}>{agregarCarrito ? 'Comprar ahora' : 'Sin stock'}</Button>
-                                    <Button className={style.botonnextdetail} onClick={agregarAlCarrito} isDisabled={stock < contador || stock === 0}> {agregarCarrito ? 'Agregar al carrito' : 'Sin stock'}</Button>
-                                </div>
+
+                                <ItemQuantitySelector citem={item} quantity={contador} sumar={aumentar} restar={disminuir} />
+                                <AddItemButton agregar = {agregarAlCarrito} />
+                                
                                 <Divider className="my-4" />
                             </div>
                         </div>

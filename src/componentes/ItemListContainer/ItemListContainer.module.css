@@ -1,0 +1,15 @@
+.contenedorproductos{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+.tituloproductos{
+  font-size: clamp(3em,4vw,7em);
+  color: #fff;
+  text-shadow: 1px 2px 0px #17FD03;
+  -webkit-text-stroke: 4px #18181B;
+  text-align: center;
+  margin-bottom: 30px;
+}

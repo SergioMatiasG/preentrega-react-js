@@ -3,22 +3,43 @@ import { Navbar, NavbarBrand, NavbarContent, NavbarMenuToggle, NavbarMenu, Navba
 import { NavLink, Link } from "react-router-dom";
 import CarWidget from '../CarWidget/carWidget'
 import logoTemplo from '../../assets/logo.png'
+import style from './style.module.css'
+import { db } from "../../Firebase/Client";
+import { collection, getDocs } from "firebase/firestore";
 
 const NavBarNext = () => {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [categoria, setCategoria] = useState([])
+  const catMap = {}
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products/categories")
-      .then((res) => res.json())
-      .then((data) => setCategoria(data))
-  }, [])
+
+    const productsRef = collection(db, "productos")
+
+    getDocs(productsRef)
+      .then((snapshot) => {
+        const updatedCategories = []
+
+        snapshot.forEach((doc) => {
+          const categoryId = doc.data().categoryId
+          if (categoryId && !catMap[categoryId]) {
+            catMap[categoryId] = true
+            updatedCategories.push(categoryId)
+          }
+        })
+
+        setCategoria(updatedCategories)
+      })
+      .catch((error) => {
+        console.error("Error al obtener categorías:", error)
+      });
+  }, [categoria])
 
 
 
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen} className="NavbarNext">
-      <NavbarContent className="toggle-n md:hidden">
+    <Navbar onMenuOpenChange={setIsMenuOpen} className={style.NavbarNext}>
+      <NavbarContent className={`${style.togglen} md:hidden`}>
         <NavbarContent>
           <NavbarMenuToggle
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -35,11 +56,11 @@ const NavBarNext = () => {
         </NavbarContent>
         <NavbarContent className="p-3 max-w-[50px]" justify="end">
           <NavbarItem>
-          <NavLink to={`/carrito`}>
-            <NavbarBrand className="contenedor-badge">
-              <CarWidget />
-            </NavbarBrand>
-          </NavLink>
+            <NavLink to={`/carrito`}>
+              <NavbarBrand className={style.contenedorbadge}>
+                <CarWidget />
+              </NavbarBrand>
+            </NavLink>
           </NavbarItem>
         </NavbarContent>
       </NavbarContent>
@@ -53,10 +74,10 @@ const NavBarNext = () => {
           </NavLink>
         </NavbarItem>
       </NavbarContent>
-      <div className="centrado-a">
+      <div className={style.centradoa}>
         <NavbarContent className="hidden md:flex gap-4 " justify="center">
           <NavbarItem>
-            <NavLink to={`/`} className="navbar-list">
+            <NavLink to={`/`} className={style.navbarlist}>
               home
             </NavLink>
           </NavbarItem>
@@ -65,7 +86,7 @@ const NavBarNext = () => {
               <DropdownTrigger>
                 <Button
                   disableRipple
-                  className="p-0 bg-transparent data-[hover=true]:bg-transparent navbar-list"
+                  className={`p-0 bg-transparent data-[hover=true]:bg-transparent ${style.navbarlist}`}
 
                   radius="sm"
                   variant="light"
@@ -82,26 +103,27 @@ const NavBarNext = () => {
               }}
             >
 
-              <DropdownItem textValue="Todas las categorias"> 
+              <DropdownItem textValue="Todas las categorias">
                 <NavLink to={`/productos`}>
                   <NavbarBrand className="justify-center">
                     Todas las Categorias
                   </NavbarBrand>
                 </NavLink>
               </DropdownItem>
-              {categoria.map((cat) => (<DropdownItem key={cat} textValue={cat}>
-                <NavLink to={`/productos/${cat}`}>
-                  <NavbarBrand className="justify-center">
-                    {cat}
-                  </NavbarBrand>
-                </NavLink>
-              </DropdownItem>
+              {categoria.map((cat) => (
+                <DropdownItem key={cat} textValue={cat}>
+                  <NavLink to={`/productos/${cat}`}>
+                    <NavbarBrand className="justify-center">
+                      {cat}
+                    </NavbarBrand>
+                  </NavLink>
+                </DropdownItem>
               ))}
             </DropdownMenu>
           </Dropdown>
           <NavbarItem>
-            <NavLink to={`/detalles`}>
-              <NavbarBrand className="navbar-list">
+            <NavLink to={`/formulario`}>
+              <NavbarBrand className={style.navbarlist}>
                 Contacto
               </NavbarBrand>
             </NavLink>
@@ -110,17 +132,17 @@ const NavBarNext = () => {
         <NavbarContent className=" hidden md:flex p-3 max-w-[50px]" justify="end">
           <NavbarItem>
             <NavLink to={`/carrito`}>
-              <NavbarBrand className="contenedor-badge">
+              <NavbarBrand className={style.contenedorbadge}>
                 <CarWidget />
               </NavbarBrand>
             </NavLink>
           </NavbarItem>
         </NavbarContent>
       </div>
-      <NavbarMenu className="menu-top" >
+      <NavbarMenu className={style.menutop} >
         <NavbarItem>
           <NavLink to={`/`}>
-            <NavbarBrand className="navbar-list">
+            <NavbarBrand className={style.navbarlist}>
               home
             </NavbarBrand>
           </NavLink>
@@ -128,15 +150,15 @@ const NavBarNext = () => {
 
         <NavbarItem>
           <NavLink to={`/productos`}>
-            <NavbarBrand className="navbar-list">
+            <NavbarBrand className={style.navbarlist}>
               Productos
             </NavbarBrand>
           </NavLink>
         </NavbarItem>
 
         <NavbarItem>
-          <NavLink to={`/detalles`}>
-            <NavbarBrand className="navbar-list">
+          <NavLink to={`/formulario`}>
+            <NavbarBrand className={style.navbarlist}>
               Contacto
             </NavbarBrand>
           </NavLink>
@@ -146,3 +168,13 @@ const NavBarNext = () => {
   );
 }
 export default NavBarNext
+
+// fetch("https://fakestoreapi.com/products/categories")
+//   .then((res) => res.json())
+//   .then((data) => setCategoria(data))
+// const productsRef = collection(db, "productos")
+// getDocs(productsRef)
+// .then(snapshot =>{
+//    console.log(snapshot.categoryId)
+// })
+// .catch(e => console.error(e))

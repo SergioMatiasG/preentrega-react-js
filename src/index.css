@@ -1,129 +1,13 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 :root {
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #000;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
 }
 
-.boton-next {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-  color: #ffff;
-  box-shadow: 0px 3px 10px 1px rgba(0, 173, 81, 1);
-}
-
-.boton-next-detail {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  max-width: 400px;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-  color: #ffff;
-  box-shadow: 0px 3px 10px 1px rgba(0, 173, 81, 1);
-}
-
-.boton-next-chico {
-  border: 1px solid transparent;
-  box-shadow: 0px 3px 10px 1px rgba(0, 173, 81, 1);
-  background-color: #1a1a1a;
-  cursor: pointer;
-}
-
-.boton-next:hover,
-.boton-next-chico:hover,
-.boton-next-detail:hover {
-  border-color: #17FD03;
-  color: #17FD03;
-}
-
-.NavbarNext {
-  background-color: #18181B;
-}
-
-.NavbarNext header {
-  padding-left: 1rem;
-  padding-right: 1rem;
-  max-width: 100%;
-}
-
-.navbar-list {
-  color: #17FD03;
-  text-decoration: inherit;
-  font-size: 25px;
-  -webkit-text-stroke: 1px #18181B;
-  padding: 0px 30px 0px 30px;
-}
-
-.contenedor-listas {
-  display: flex;
-  justify-content: space-around;
-  gap: 10px;
-}
-
-.menu-top {
-  gap: 2rem;
-  background-color: transparent;
-  height: 200px !important;
-}
-
-.navbar-list:hover,
-.contenedor-badge:hover {
-  color: #ffffff;
-}
-
-.contenedor-badge {
-  font-weight: 500;
-  color: #17FD03;
-  text-decoration: inherit;
-  font-size: 40px;
-
-}
-
-.toggle-n {
-  position: absolute;
-}
-
-.centrado-a {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 1150px;
-}
-
-.sombreado-card {
-  box-shadow: 0px 1px 10px 0px rgba(0, 173, 81, 1);
-}
-
-.flex-colum {
+.flex-colum{
   display: flex;
   flex-direction: column;
 }
 
-.ancho-card {
-  max-width: 300px;
-}
-
-.text-small {
+.text-small{
   text-align: center;
 }
 
@@ -131,7 +15,3 @@
   background-color: #18181B;
 }
 
-.bbc {
-  background-color: #000;
-  border-color: #000;
-}

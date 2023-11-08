@@ -1,0 +1,47 @@
+.NavbarNext {
+    background-color: #18181B;
+}
+
+.NavbarNext header {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: 100%;
+}
+
+.navbarlist {
+    color: #17FD03;
+    text-decoration: inherit;
+    font-size: 25px;
+    -webkit-text-stroke: 1px #18181B;
+    padding: 0px 30px 0px 30px;
+}
+
+.contenedorbadge {
+    font-weight: 500;
+    color: #17FD03;
+    text-decoration: inherit;
+    font-size: 40px;
+
+}
+
+.navbarlist:hover,
+.contenedorbadge:hover {
+    color: #ffffff;
+}
+
+.togglen {
+    position: absolute;
+}
+
+.centradoa {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1150px;
+}
+.menutop {
+    gap: 2rem;
+    background-color: transparent;
+    height: 200px !important;
+  }
+  

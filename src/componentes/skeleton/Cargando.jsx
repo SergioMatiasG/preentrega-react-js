@@ -1,11 +1,12 @@
 import React from 'react'
-import { Spinner, CircularProgress } from '@nextui-org/react'
-import './Cargando.css'
+import { Spinner } from '@nextui-org/react'
+import style from './Cargando.module.css'
 
 const Cargando = () => {
   return (
-    <div className='contenedor-cargando'>
-      <Spinner label="Cargando" color="success" labelColor="success" size='lg'/>
+    
+    <div className={style.contenedorcargando}>
+        <Spinner label="Cargando" color="success" labelColor="success" size='lg'/>
     </div>
   )
 }

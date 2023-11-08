@@ -1,9 +1,10 @@
 import { Card, CardBody, CardFooter, Image, Button } from "@nextui-org/react";
 import { Link } from "react-router-dom";
+import style from './style.module.css'
 
 const ItemSwiper = ({ item }) => {
   return (
-    <Card className="sombreado-card ancho-card">
+    <Card className={style.somanc}>
       <CardBody className="overflow-visible p-0">
         <Image
           isZoomed
@@ -18,7 +19,7 @@ const ItemSwiper = ({ item }) => {
       <CardFooter className="text-small flex-colum">
         <b className="truncate">{item.title}</b>
         <Link to={`/item/${item.id}`}>
-          <Button className="boton-next">
+          <Button className={style.botonnext}>
             Ver Producto
           </Button>
         </Link>

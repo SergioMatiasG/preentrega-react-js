@@ -6,15 +6,23 @@ import { Pagination } from 'swiper/modules';
 import CardSkeleton from '../skeleton/CardSkeleton';
 import ItemSwiper from "../Items/ItemSwiper"
 import { useEffect, useState } from 'react';
+import { db } from "../../Firebase/Client"
+import { query, where, collection, getDocs } from 'firebase/firestore';
 
 const carruselS = ({ titulo, categoria }) => {
     const [list, setList] = useState([])
-    useEffect (()=>{
-            fetch(`https://fakestoreapi.com/products/category/${categoria}`)
-            .then(r => r.json())
-            .then(data => setList(data))
-            .catch(error => console.error(error))
-    },[])
+    useEffect(() => {
+        const productsRef = 
+        query(
+            collection(db, "productos"),
+            where("categoryId", "==", categoria),
+            )
+        getDocs(productsRef)
+            .then(snapshot => {
+                setList(snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })))
+            })
+            .catch(e => console.error(e))
+    }, [])
     return (
         <div className='contenedor-swiper'>
             <h3 className='titulo-swiper'>{titulo}</h3>
@@ -37,33 +45,33 @@ const carruselS = ({ titulo, categoria }) => {
                     ))
                 ) : (
                     <>
-                    <SwiperSlide>
-                        <CardSkeleton />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <CardSkeleton />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <CardSkeleton />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <CardSkeleton />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <CardSkeleton />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <CardSkeleton />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <CardSkeleton />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <CardSkeleton />
-                    </SwiperSlide>
+                        <SwiperSlide>
+                            <CardSkeleton />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardSkeleton />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardSkeleton />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardSkeleton />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardSkeleton />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardSkeleton />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardSkeleton />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardSkeleton />
+                        </SwiperSlide>
                     </>
 
-                    )
+                )
                 }
 
             </Swiper>

@@ -1,0 +1,36 @@
+.contenedorcentrado {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.titulo {
+    font-size: clamp(1em, 4vw, 4em);
+    color: #fff;
+    text-shadow: 0px 4px 0px #17FD03;
+    -webkit-text-stroke: 4px #18181B;
+    padding-bottom: 40px;
+    text-align: center;
+
+}
+
+.contenedorformulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contenedorformulario input {
+    width: 400px;
+    margin-bottom: 3rem;
+}
+
+.contenedorformulario label {
+    font-size: clamp(1em, 2vw, 2em);
+    color: #fff;
+    text-shadow: 0px 2px 0px #17FD03;
+    -webkit-text-stroke: 2px #18181B;
+    padding-bottom: 20px;
+    text-align: center;
+}

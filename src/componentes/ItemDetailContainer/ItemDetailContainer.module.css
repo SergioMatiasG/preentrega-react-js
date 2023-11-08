@@ -1,5 +1,5 @@
-.contenedor-cargando{
+.itemdetailcontenedor {
     display: flex;
     justify-content: center;
-    margin-top: 15%;
+    margin-top: 30px;
 }

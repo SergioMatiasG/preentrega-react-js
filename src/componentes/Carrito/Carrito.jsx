@@ -1,17 +1,30 @@
+import { useCart } from '../Context/CartProvider'
+import style from './Carrito.module.css'
+import ItemCarrito from '../Items/itemCarrito'
+import { Button } from '@nextui-org/react'
+const Carrito = () => {
+  const { cart, removeProductFromCart, updateQuantityInCart } = useCart()
 
-const Carrito = ({carrito}) => {
+  const precioTotalCompra = cart.reduce((total, producto) => {
+    return total + (producto.product.price * producto.quantity)
+  }, 0)
 
-    return (
-      <>
-      <div>
-        <h2> Carrito de compras </h2>
-          <ul>
-            {carrito.map((item, index) => (
-              <li key={index}> {item.title} - $ {item.price}</li>
-            ))}
-          </ul>
+  return (
+    <>
+      <div className={style.centrado}>
+        <h2 className={style.titulo}> Carrito de compras </h2>
       </div>
-      </>
-    )
+      <div>
+        {cart.map((p, index) => (<ItemCarrito key={index} producto={p} borrarProductoCarrito={removeProductFromCart} cantidad={updateQuantityInCart} />))}
+        <div className={style.preciototal}>
+          <p>Precio total de la compra : $ {precioTotalCompra}</p>
+        </div>
+      </div>
+      <div>
+        <Button>Crear Orden</Button>
+        <Button>Ver orden</Button>
+      </div>
+    </>
+  )
 }
 export default Carrito

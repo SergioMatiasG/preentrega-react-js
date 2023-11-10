@@ -4,7 +4,7 @@ import SkeletonS from "../skeleton/Skeleton"
 import ItemsList from "../Items/ItemList"
 import style from './ItemListContainer.module.css'
 import { db } from "../../Firebase/Client"
-import { collection, getDocs, query, where, limit, addDoc } from "firebase/firestore"
+import { collection, getDocs, query, where} from "firebase/firestore"
 
 const ItemListContainer = () => {
     const [products, setProducts] = useState([])

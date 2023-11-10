@@ -10,6 +10,7 @@ import Footer from './componentes/Footer/footer'
 import CartProvider from './componentes/Context/CartProvider'
 import Formulario from './componentes/Formulario/Formulario'
 import CheckOut from './componentes/CheckOut/CheckOut'
+import OrdenDecompra from './componentes/OrdenDeCompra/OrdenDecompra'
 
 function App() {
   return (
@@ -24,7 +25,8 @@ function App() {
               <Route path='/productos' element={<ItemListContainer />} />
               <Route path='/productos/:nombreCategoria' element={<ItemListContainer />} />
               <Route path='/formulario' element={<Formulario />} />
-              <Route path='/ordenes' element={<CheckOut />} />
+              <Route path='/ordenes' element={<OrdenDecompra />} />
+              <Route path='/ordenes/:ordenId' element={<CheckOut />} />
               <Route path='/carrito' element={<Carrito />} />
               <Route path='*' element={<NotFound />} />
             </Routes>

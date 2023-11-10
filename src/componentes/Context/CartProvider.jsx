@@ -24,7 +24,6 @@ const CartProvider = ({ children }) => {
         } else {
             setCart([...cart, { product, quantity }])
         }
-        console.log(cart)
     }
 
     useEffect(() => {
@@ -44,10 +43,13 @@ const CartProvider = ({ children }) => {
         });
         setCart(updatedCart)
     };
-    
+    const clearCart = () =>{
+        setCart ([])
+        localStorage.removeItem('cart')
+    }
 
     return (
-        <CartContext.Provider value={{ cart, addToCart, removeProductFromCart, updateQuantityInCart  }}>
+        <CartContext.Provider value={{ cart, addToCart, removeProductFromCart, updateQuantityInCart, clearCart  }}>
             {children}
         </CartContext.Provider>
     )

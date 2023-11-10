@@ -12,28 +12,31 @@ const NavBarNext = () => {
   const [categoria, setCategoria] = useState([])
   const catMap = {}
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    const productsRef = collection(db, "productos")
+  //   const productsRef = collection(db, "productos")
 
-    getDocs(productsRef)
-      .then((snapshot) => {
-        const updatedCategories = []
+  //   getDocs(productsRef)
+  //     .then((snapshot) => {
+  //       const updatedCategories = []
 
-        snapshot.forEach((doc) => {
-          const categoryId = doc.data().categoryId
-          if (categoryId && !catMap[categoryId]) {
-            catMap[categoryId] = true
-            updatedCategories.push(categoryId)
-          }
-        })
+  //       snapshot.forEach((doc) => {
+  //         const categoryId = doc.data().categoryId
+  //         if (categoryId && !catMap[categoryId]) {
+  //           catMap[categoryId] = true
+  //           updatedCategories.push(categoryId)
+  //         }
+  //       })
 
-        setCategoria(updatedCategories)
-      })
-      .catch((error) => {
-        console.error("Error al obtener categorías:", error)
-      });
-  }, [categoria])
+  //       setCategoria(updatedCategories)
+  //       console.log('soy categoria')
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error al obtener categorías:", error)
+  //     })
+  // }, [])
+  
+  const categorias = ["perifericos","motherboards", "procesadores", "placas de video"]
 
 
 
@@ -110,7 +113,7 @@ const NavBarNext = () => {
                   </NavbarBrand>
                 </NavLink>
               </DropdownItem>
-              {categoria.map((cat) => (
+              {categorias.map((cat) => (
                 <DropdownItem key={cat} textValue={cat}>
                   <NavLink to={`/productos/${cat}`}>
                     <NavbarBrand className="justify-center">

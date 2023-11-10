@@ -261,3 +261,39 @@
     border-color: rgb(223, 7, 7);
     color:rgb(223, 7, 7);
 }
+.contenedorbuyerinfo{
+    display: flex;
+    flex-direction: column;
+}
+.contenedorproducto{
+    display: flex;
+    justify-content: center;
+}
+.negrita{
+    color: #17FD03;
+    -webkit-text-stroke: 0.1px #18181B;
+   
+}
+.preciototal{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+.titulocentrado{
+    display: flex;
+    justify-content: center;
+}
+.datoscomprador{
+    margin-bottom: 1rem;
+}
+.contenedorordencompra{
+    background-color: #18181B;
+    width: 1200px;
+    margin-bottom: 2rem;
+    padding: 1rem;
+}
+.casitablas{
+    width: 100%;
+    max-width: 350px;
+    text-wrap: nowrap;
+}

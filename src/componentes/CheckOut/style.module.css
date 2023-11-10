@@ -1,5 +1,16 @@
 .checkoutcontenedor {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     margin-top: 30px;
 }
+.titulo {
+    font-size: clamp(3em,6vw,4em);
+    font-weight: 900;
+    color: #fff;
+    text-shadow: 1px 2px 0px #17FD03;
+    -webkit-text-stroke: 2px #18181B;
+    text-align: center;
+    padding-right: 50px;
+  }

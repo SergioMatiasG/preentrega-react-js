@@ -12,10 +12,10 @@ import { query, where, collection, getDocs } from 'firebase/firestore';
 const carruselS = ({ titulo, categoria }) => {
     const [list, setList] = useState([])
     useEffect(() => {
-        const productsRef = 
-        query(
-            collection(db, "productos"),
-            where("categoryId", "==", categoria),
+        const productsRef =
+            query(
+                collection(db, "productos"),
+                where("categoryId", "==", categoria),
             )
         getDocs(productsRef)
             .then(snapshot => {

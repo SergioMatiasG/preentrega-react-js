@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Navbar, NavbarBrand, NavbarContent, NavbarMenuToggle, NavbarMenu, NavbarItem, Dropdown, DropdownMenu, DropdownItem, DropdownTrigger, Button } from "@nextui-org/react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink} from "react-router-dom";
 import CarWidget from '../CarWidget/carWidget'
 import logoTemplo from '../../assets/logo.png'
 import style from './style.module.css'

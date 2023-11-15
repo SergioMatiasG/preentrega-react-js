@@ -1,41 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Navbar, NavbarBrand, NavbarContent, NavbarMenuToggle, NavbarMenu, NavbarItem, Dropdown, DropdownMenu, DropdownItem, DropdownTrigger, Button } from "@nextui-org/react";
 import { NavLink, Link } from "react-router-dom";
 import CarWidget from '../CarWidget/carWidget'
 import logoTemplo from '../../assets/logo.png'
 import style from './style.module.css'
-import { db } from "../../Firebase/Client";
-import { collection, getDocs } from "firebase/firestore";
+
 
 const NavBarNext = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [categoria, setCategoria] = useState([])
-  const catMap = {}
 
-  // useEffect(() => {
-
-  //   const productsRef = collection(db, "productos")
-
-  //   getDocs(productsRef)
-  //     .then((snapshot) => {
-  //       const updatedCategories = []
-
-  //       snapshot.forEach((doc) => {
-  //         const categoryId = doc.data().categoryId
-  //         if (categoryId && !catMap[categoryId]) {
-  //           catMap[categoryId] = true
-  //           updatedCategories.push(categoryId)
-  //         }
-  //       })
-
-  //       setCategoria(updatedCategories)
-  //       console.log('soy categoria')
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error al obtener categorías:", error)
-  //     })
-  // }, [])
-  
   const categorias = ["perifericos","motherboards", "procesadores", "placas de video"]
 
 

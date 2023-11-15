@@ -86,6 +86,7 @@ const Carrito = () => {
                       placeholder="Ingrese su nombre"
                       type='text'
                       variant="bordered"
+                      required
                       value={buyer.name}
                       onChange={(e) => handleInputChange(e, 'name')}
                     />
@@ -94,14 +95,17 @@ const Carrito = () => {
                       placeholder="Ingrese su email"
                       type="email"
                       variant="bordered"
+                      required
                       value={buyer.email}
                       onChange={(e) => handleInputChange(e, 'email')}
                     />
                     <Input
                       label="phone"
                       placeholder="Ingrese su numero"
-                      type="tel"
+                      type="number"
                       variant="bordered"
+                      required
+                      max="9"
                       value={buyer.phone}
                       onChange={(e) => handleInputChange(e, 'phone')}
                     />

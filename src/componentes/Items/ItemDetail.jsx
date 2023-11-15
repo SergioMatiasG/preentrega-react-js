@@ -4,6 +4,7 @@ import { useCart } from "../Context/CartProvider"
 import ItemQuantitySelector from './ItemQuantitySelector'
 import AddItemButton from "./addItemButton"
 import style from './style.module.css'
+import Desciption from "./Desciption"
 
 const ItemDetail = ({ item }) => {
     const [contador, setContador] = useState(1)
@@ -27,12 +28,7 @@ const ItemDetail = ({ item }) => {
             {!item ? (<p> El producto con id:{id} no existe</p>)
                 : (
                     <div className={style.contenedordetalles}>
-                        <div className={style.contenedordetallesimagen}>
-                            <div className={style.imagendetails}>
-                                <img src={item.image} alt={item.title} />
-                            </div>
-                            <p>Descripcion: {item.description}</p>
-                        </div>
+                        <Desciption  producto={item}/>
                         <div className={style.contenedordetallestexto}>
                             <h3>{item.title}</h3>
                             <a className={style.linkcolor} href="">Metodos de pago</a>
